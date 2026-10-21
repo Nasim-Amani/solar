@@ -16,7 +16,7 @@ solar_data_SolarRad_clean.csv
         │  2solar_data_final_columns.ipynb
         ▼
 solar_data_final_columns.csv
-        │  Dataset_Guide.ipynb
+        │  3Dataset_Guide.ipynb
         ▼
 Guide + first findings (no new file)
 ```
@@ -43,7 +43,7 @@ Guide + first findings (no new file)
 - Removed unusable columns: `PV_1_SA_I` (open circuit, ~0 A) and `PV_3_Tr_I` (not working consistently).
 - **Output:** `solar_data_final_columns.csv`
 
-### Dataset Guide: `Dataset_Guide.ipynb`
+### 3 . Dataset Guide: `Dataset_Guide.ipynb`
 - How the final dataset was made and what each column means.
 - Important Points.
 - A clear and a cloudy day side by side.

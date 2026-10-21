@@ -2,6 +2,8 @@
 
 Outdoor solar and PV measurements at **1-second resolution**, 15–27 February 2013 (1,015,991 records; 11 complete days, Feb 16–26).
 
+**New here? Start with [`Dataset_Guide.ipynb`](Dataset_Guide.ipynb)**: it explains the final dataset, its columns, how to load it, and what to keep in mind.
+
 ## Roadmap
 
 ```
@@ -15,15 +17,15 @@ solar_data_SolarRad_clean.csv
         │  2solar_data_final_columns.ipynb
         ▼
 solar_data_final_columns.csv
-        │  3Exploratory_Analysis_Correlation_and_Thermal_Response.ipynb
+        │  Dataset_Guide.ipynb
         ▼
-Exploratory analysis & thermal response (no new file)
+Guide for users + first findings (no new file)
 ```
 
 ### 0 · Merging and basic cleaning: `0cleaned_solar_data_Oct26.ipynb`
 - Read and merged **17 Excel files** (60,000 rows each, identical structure).
 - Built a single `DateTime` from `Date` + `Time`.
-- Removed **17 exact duplicate records** and corrected repeated timestamps so that records are strictly 1 s apart (originals kept during the check).
+- Removed **17 exact duplicate records** and corrected repeated timestamps so that records are strictly 1 s apart.
 - Checked missing values, zeros and temperature ranges: no missing values or impossible values.
 - Dropped empty or unused columns (`Parameter 8`, `PV 2 GT V`, `PV 3 Tr V`) and helper columns, and renamed the remaining columns.
 - **Output:** `cleaned_solar_data_Oct26.csv`
@@ -42,10 +44,14 @@ Exploratory analysis & thermal response (no new file)
 - Removed unusable columns: `PV_1_SA_I` (open circuit, ~0 A) and `PV_3_Tr_I` (not working consistently).
 - **Output:** `solar_data_final_columns.csv`
 
-### 3 · Exploratory analysis: `3Exploratory_Analysis_Correlation_and_Thermal_Response.ipynb`
-- Descriptive statistics (day vs night) and daily behaviour of all variables.
-- Correlation analysis: **Pearson, Spearman** and **mutual information** (on 1-min changes).
-- **Thermal response:** module temperatures react to irradiance changes within ~1 min, with thermal time constants of **~5–12 min**.
+### Dataset Guide: `Dataset_Guide.ipynb`
+- How the final dataset was made, what each column means, and how to load and filter it.
+- Points to keep in mind (remaining small offsets, PV_4 battery behaviour, assumptions about clouds).
+- A clear and a cloudy day side by side.
+- First findings:
+  - `PV_2_GT_I` follows irradiance almost perfectly (r = 0.995), with a small morning/afternoon difference.
+  - `PV_1_SA_V` behaves like the open-circuit voltage of a silicon module (−0.325 %/°C).
+  - Module temperature does not follow the sun instantly: at the same irradiance, modules are much warmer in the afternoon than in the morning.
 
 ## Final dataset: `solar_data_final_columns.csv`
 

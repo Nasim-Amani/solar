@@ -2,7 +2,6 @@
 
 Outdoor solar and PV measurements at **1-second resolution**, 15–27 February 2013 (1,015,991 records; 11 complete days, Feb 16–26).
 
-**New here? Start with [`Dataset_Guide.ipynb`](Dataset_Guide.ipynb)**: it explains the final dataset, its columns, how to load it, and what to keep in mind.
 
 ## Roadmap
 

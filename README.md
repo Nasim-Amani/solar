@@ -18,7 +18,7 @@ solar_data_SolarRad_clean.csv
 solar_data_final_columns.csv
         │  Dataset_Guide.ipynb
         ▼
-Guide for users + first findings (no new file)
+Guide + first findings (no new file)
 ```
 
 ### 0 · Merging and basic cleaning: `0cleaned_solar_data_Oct26.ipynb`
@@ -44,8 +44,8 @@ Guide for users + first findings (no new file)
 - **Output:** `solar_data_final_columns.csv`
 
 ### Dataset Guide: `Dataset_Guide.ipynb`
-- How the final dataset was made, what each column means, and how to load and filter it.
-- Points to keep in mind (remaining small offsets, PV_4 battery behaviour, assumptions about clouds).
+- How the final dataset was made and what each column means.
+- Important Points.
 - A clear and a cloudy day side by side.
 - First findings:
   - `PV_2_GT_I` follows irradiance almost perfectly (r = 0.995), with a small morning/afternoon difference.
